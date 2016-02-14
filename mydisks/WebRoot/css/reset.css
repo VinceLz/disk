@@ -1,0 +1,445 @@
+body{
+	margin:0 auto;
+	padding:0;
+	min-width:1024px;
+	}
+#all a{
+	text-decoration:none;
+	outline: none;
+ 	hide-focus: expression(this.hideFocus=true);
+	}
+#all a:hover{
+	color:#0060BF;
+	}
+.top{
+	position:relative;
+	}
+.navbar-brand img{
+	height:30px;
+	float:left;
+	}
+.navbar-brand p{
+	float:right;
+	margin-bottom: 0rem;
+	margin-left:10px;
+	}
+.nav li{
+	padding-right:30px;
+	}
+.top .navbar {
+    border-radius: 0rem;
+}
+.nav_width{
+	margin:0 auto;
+	}
+.nav_width p{
+	font-famliy:"微软雅黑";
+	font-size:20px;
+	font-weight:600;
+}
+.login label{
+	display:block;
+	}
+.login{
+	position: absolute;
+	z-index: 1000;
+	width:300px;
+	top:20%;
+	right:15%;
+	background-color:#fff;
+	padding:30px;
+	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.13), 0px 1px 5px rgba(0, 0, 0, 0.36), 0px 0px 0px 1px rgba(255, 255, 255, 0.69) inset;
+	}
+.login_in{
+	margin:0 auto;
+	text-align:left;
+	}
+.login_in p{
+	color:#0275D8;
+	}
+#fault{
+	width:200px;
+	height:16px;
+	background-image:url(../images/falut.png);
+	background-repeat:no-repeat;
+	display:none;
+	}
+.alerterro {
+	height:16px;
+	margin:6px 0;
+	}
+
+.alerterro span{
+	padding-left:25px;
+	font-size:14px;
+	color:#666;
+	font-style:normal;
+	}
+.btn{
+	width:220px;
+	}
+.verification input{
+	width:125px;
+	margin-right:15px;
+	float:left;
+	}
+.verification img{
+	width:90px;
+	height:35px;
+	float:right;
+	}
+.middle{
+	max-width:1100px;
+	margin:0 auto;
+	margin-bottom:40px;
+	}
+.middle_nav{
+	width:200px;
+	height:35px;
+	margin:30px 0 30px 0;
+	font-size:20px;
+	font-family:"微软雅黑";
+	background-image:url(../images/navback.jpg);
+	background-repeat:no-repeat;
+	}
+.mid_title {
+	text-align:center;
+	margin:0 auto;
+		
+	}
+.mid_title p{
+	font-size:20px;
+	color:#474775;
+	font-family:"微软雅黑";
+	font-weight:600;
+	}
+.footer{
+	margin-top:20px;
+	font-size:14px;
+	text-align:center;
+	color:#999;
+	}
+.rborder{
+	border:1px solid #fff;
+	border-right-color:#ccc;
+	}
+	
+	
+#main-nav {
+	background-color:#F5F5F5;
+	padding:20px 15px 0 15px;
+	min-height:650px;
+	}
+
+#main-nav li{
+	padding:10px;
+	text-align:center;
+	
+	}
+#main-nav li a{
+	color:#333333;
+}
+.nav-tabs {
+    border:none;
+}
+.rightarea{
+	padding:20px;
+	min-height:650px;
+	border:1px solid #F0F0F0;
+	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.13), 0px 0px 0px rgba(0, 0, 0, 0.36), 0px 0px 0px 0px rgba(255, 255, 255, 0.69) inset;
+	}
+.rightarea button{
+	width:100px;
+	}
+.righthead{
+	margin-bottom:10px;
+	}
+.searchf p{
+	float:left;
+	}
+.searchf .input-group{
+	width:260px;
+	margin-bottom:20px;
+	float:right;
+	}
+.table tr:hover{
+	background-color:#F7F9FD;
+	}
+.table th, .table td {
+    padding: 0.5rem;
+}
+.admin{
+	margin-top:28px;
+	padding:0px 20px;
+	text-align:center;
+	}
+.admin p{
+	margin:10px;
+	}
+.admin img{
+	width:110px;
+	height:110px;
+	border:1px solid #999;
+	}
+.admin a{
+	color:#333;
+	}
+.admin .table a:focus, a:hover{
+	color:#0080FF;
+	}
+.admin i{
+	padding-right:20px;
+	}
+.filefound{
+	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.13), 0px 0px 0px rgba(0, 0, 0, 0.36), 0px 0px 0px 0px rgba(255, 255, 255, 0.69) inset;
+	max-width:1100px;
+	min-height:600px;
+	margin-top:20px;
+	margin-left:20px;
+	margin-right:50px;
+	padding:30px;
+	}
+.filefound button {
+	width:130px;
+	}	
+.found{
+	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.13), 0px 0px 0px rgba(0, 0, 0, 0.36), 0px 0px 0px 0px rgba(255, 255, 255, 0.69) inset;
+	max-width:1100px;
+	min-height:600px;
+	margin-top:20px;
+	margin-left:20px;
+	margin-right:50px;
+	}
+.found img{
+	margin-top:200px;
+	vertical-align:central;
+	}
+.ftitle{
+	float:left;
+	margin:30px 0 0 30px;	
+	color:#333;
+	}
+.found i{
+	margin-right:10px;
+	}
+.found p{
+	text-align:center;	
+	}
+.found .btn{
+	width:100px;
+	float:right;
+	margin:20px 20px;	
+	}
+.size{
+	font-size:14px;
+	color:#999;
+	margin-top:20px;
+	}
+.sign_middle {
+	max-width:1000px;
+	margin:0 auto;
+	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.13), 0px 0px 0px rgba(0, 0, 0, 0.36), 0px 0px 0px 0px rgba(255, 255, 255, 0.69) inset;
+	min-height:600px;
+	}
+.signtitle {
+	 background-image: url(../images/sign.jpg);
+     background-repeat: no-repeat;
+	 height:40px;
+	 margin:30px 0 30px 30px;
+	 text-align:right; 
+	}
+.inputlist{
+	margin-left:50px;
+	}
+
+.sign_middle  .input-group input{
+	width:350px;
+	float:right;
+	margin:15px;
+	}
+.inputlist .input-group .btn{
+	margin-top:40px;
+	margin-left:85px;
+	width:250px;
+	}
+.sign_middle  p{
+	float:right;
+	font-size:14px;
+	color:#666;
+	margin:20px;
+	}
+.sign_middle  .proof input{
+	width:150px;
+	float:right;
+	}
+.sign_middle  .proof img{
+	float:right;
+	margin:15px;
+	height:38px;
+	}
+.sign_middle  .proof a{
+	float:right;
+	margin:15px;
+	}
+.sign_middle  label{
+	width:50px;
+	text-align:right;
+	float:left;
+	line-height:60px;
+	}
+.sign_middle  .btn-lg, .btn-group-lg > .btn{
+	padding: 0.4rem 1rem;
+	}
+.sign_middle  button{	
+	margin:40px 170px;
+	}
+.signsucess{
+	width:400px;
+	margin:0 auto;
+	margin-top:200px;
+	}
+.signsucess img{
+	width:80px;
+	float:left;
+	margin-right:20px;
+	}
+.signsucess h3{
+	padding-top:15px;
+	font-family:"微软雅黑";
+	}
+.remodal-bg{
+	display:block;
+	float:right;
+	margin-top:23px;
+	margin-right:25px;
+	}
+.fmall{
+	margin:0 auto;
+	}
+.fmtable{
+	margin-top:20px;
+	}
+.fmlist{
+	margin:0 20px;
+	
+	}
+.fmadmin img{
+	border:1px solid #999;
+	margin-top:20px;
+	margin-left:20px;
+	}
+.fmlist p{
+	line-height:16px;
+	margin-bottom:0px;
+	}
+.fmlist a img{
+	margin-right:15px;
+	}
+.fmlist .dropdown {
+	display:inline;
+	}
+.fmlist .dropdown-menu{
+	min-width:100px;
+	}
+.fmlist .dropdown li{
+	padding-left:20px;
+	}
+.fp p{
+	line-height:16px;
+	margin-bottom:0px;
+	margin-top:7px;
+	}
+.fp a{
+	margin-right:20px;
+	}
+.exe{
+	background-image:url(../images/exe.jpg);
+	background-repeat:no-repeat;
+	padding-left:30px;
+	}
+.jpg{
+	background-image:url(../images/jepg.jpg);
+	background-repeat:no-repeat;
+	padding-left:30px;
+	}
+.apk{
+	background-image:url(../images/apk.jpg);
+	background-repeat:no-repeat;
+	padding-left:30px;
+	}
+.mp3{
+	background-image:url(../images/music.jpg);
+	background-repeat:no-repeat;
+	padding-left:30px;
+	}
+.zip{
+	background-image:url(../images/zip.jpg);
+	background-repeat:no-repeat;
+	padding-left:30px;
+	}
+.others{
+	background-image:url(../images/others.jpg);
+	background-repeat:no-repeat;
+	padding-left:30px;
+	}
+.mp4{
+	background-image:url(../images/video.jpg);
+	background-repeat:no-repeat;
+	padding-left:30px;
+	}
+.fmback{
+	max-width:1100px;
+	background-image:url(../images/back1.jpg);
+	padding-left:50px;
+	}
+.fmtable .table a{
+	color:#333;
+	}
+.fmtable .table td{
+	width:20px;
+	}
+.fmlist .table td{
+	padding:0.8em;	
+	}
+.fmlist .table a{
+	color:#333;
+	}
+#fmtable .table-hover tbody tr:hover {
+  background-color: #F0F0F0;
+}
+#fmtable td{
+	border:none;
+	line-height:0.5em;
+	}
+#fmtable p{
+	padding-top:25px;
+	}
+#fmtable table{
+	width:250px;
+	margin-top:15px;
+	margin-left:-10px;
+	}
+.fmreback{
+	background-image:url(../images/reback1.jpg);
+	background-repeat:repeat-x;
+	}
+.fmtime{
+	text-align:center;
+	}
+.filefound .form-inline{
+	width:600px;
+	margin:0 auto;
+	margin-top:200px;
+	}
+.myprogress {
+	width:600px;
+	margin:0px 0 20px 0;
+	}
+.myprogress .progress{
+	width:500px;
+	float:left;
+	}	
+.myprogress .myprogress_text{
+	float:right;
+	line-height:15px;
+	}
