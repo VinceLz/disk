@@ -29,7 +29,7 @@ public class DownLoadServlet extends HttpServlet {
 		String cid = req.getParameter("cid");
 		File myfile = fileService.findByFid(fid);
 		String path = this.getServletContext().getRealPath(
-				myfile.getfPath().substring(8));
+				myfile.getfPath());
 
 		String framename = filenameEncoding(myfile.getfName(), req);
 

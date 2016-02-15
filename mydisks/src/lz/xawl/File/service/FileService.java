@@ -57,6 +57,23 @@ public class FileService {
 			}
 		}
 		
+		public File findByHash(String hash)
+		{
+			try {
+				return fileDao.findByHash(hash);
+			} catch (SQLException e) {
+				throw new RuntimeException(e);
+			}
+		}
+		
+		public File findByPath(String path)
+		{
+			try {
+				return fileDao.findByFpath(path);
+			} catch (SQLException e) {
+				throw new RuntimeException(e);
+			}
+		}
 		//修改downcount
 		
 		public void editcount(String count,String fid)

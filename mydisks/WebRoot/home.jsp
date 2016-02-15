@@ -38,7 +38,7 @@ String basePath = request.getScheme() + "://"
 		var iids=$(this).attr("iid");
 		
 		$.ajax({
-			url:"/MyDrive/FileServlet",
+			url:"/mydisks/FileServlet",
 			data:{method:"deleteFile",fid:iids},
 			type:"POST",
 			dataType:"json",

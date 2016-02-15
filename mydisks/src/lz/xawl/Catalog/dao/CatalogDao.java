@@ -16,7 +16,6 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.MapHandler;
 import org.apache.commons.dbutils.handlers.MapListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
-import org.junit.Test;
 
 import cn.itcast.commons.CommonUtils;
 import cn.itcast.jdbc.TxQueryRunner;
@@ -127,7 +126,6 @@ public class CatalogDao {
 		return;
 	}
 
-	@Test
 	public void testDelete() throws Exception {
 
 	}

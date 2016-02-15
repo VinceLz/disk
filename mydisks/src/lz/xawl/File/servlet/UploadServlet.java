@@ -51,8 +51,57 @@ public class UploadServlet extends HttpServlet {
 				return ;
 			}
 			//获取图片
+			String hash=null;
 			FileItem file=fileList.get(0);
 			String cid=fileList.get(1).getString("utf-8");
+			try {
+				hash=Tool.getMD5Checksum(file.getInputStream());
+				//得到了hash  应该去数据库查询一下  如果已经存在就不上传了
+				
+				lz.xawl.File.domain.File f=fileservice.findByHash(hash);
+				
+				if(f!=null){
+					//说明已经存在改文件了直接写入数据库中
+					System.out.println("文件名:"+f.getfName());
+					lz.xawl.File.domain.File file2=new lz.xawl.File.domain.File();
+						file2.setfPath(f.getfPath());
+						file2.setfSize(f.getfSize());
+						file2.setfType(f.getfType());
+						file2.setfName(f.getfName());		
+						file2.setfHash("");
+						file2.setfDiskName(f.getfDiskName());
+						String fid=Tool.randomId();  //文件id
+						file2.setfId(fid);
+						file2.setfDowncount("0");
+						file2.setfDesc("暂留");						
+						SimpleDateFormat  simp1=new SimpleDateFormat("yyyy-MM-dd");
+						String date=simp1.format(new Date()).toString();
+						file2.setfUploadtime(date);
+						file2.setIsShare("0");
+						Catalog c1=new Catalog();
+						c1.setcId(cid);
+						file2.setCatalog(c1);
+						fileservice.upLoadFile(file2);
+						String cf=catalogservice.cidTocf(cid);
+						if(cf==null||cf.isEmpty()||"".equals(cf))
+						{
+							//说明文件夹下暂时没有文件 
+							String sCf=Tool.randomId();//生成cf值
+							catalogservice.intoCf(cid,sCf);
+							//开始写入fid值
+							fileservice.writecf(fid, sCf);
+						}else
+						{
+							fileservice.writecf(fid, cf);
+						}
+						out.write("<script>alert('上传完成');window.location.href='/mydisks/CatalogServlet?method=myCatalog&cid="+cid+"'</script>");
+						return ;
+				}
+			
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+			
 			String filename=file.getName();
 			String fileQian=null; //文件名，不包含后缀
 			String fileExt=null;  //后缀文件类型  
@@ -73,10 +122,15 @@ public class UploadServlet extends HttpServlet {
 			
 			//开始上传文件   文件名重名问题需要解决  并且按用户分文件夹！
 			String savePath=this.getServletContext().getRealPath("/upload");
+			// 看是否存在 不存在就要创建
+			File path=new File(savePath);
+			if(!path.exists()){
+				path.mkdirs();
+			}
 			String filename2=fileQian+" "+new SimpleDateFormat("hh-mm-ss").format(new Date()).toString()+"."+fileExt;
 			
 			File imgfile=new File(savePath, filename2); //绝对路径的文件
-		
+			
 			try {
 				file.write(imgfile);
 			} catch (Exception e) {
@@ -84,11 +138,11 @@ public class UploadServlet extends HttpServlet {
 			}
 			//上传完成 开始写数据库保存
 			lz.xawl.File.domain.File myfile=new lz.xawl.File.domain.File();
-			myfile.setfPath("/MyDrive/upload/"+filename2);
+			myfile.setfPath("/upload/"+filename2);
 			myfile.setfSize(file.getSize());
 			myfile.setfType(fileExt);
-			myfile.setfName(filename);	
-			myfile.setfHash("");		
+			myfile.setfName(filename);		
+			myfile.setfHash(hash);
 			myfile.setfDiskName(filename2);
 			String fid=Tool.randomId();  //文件id
 			myfile.setfId(fid);
@@ -117,19 +171,10 @@ public class UploadServlet extends HttpServlet {
 			}
 			//数据表写完成了，
 		//	PrintWriter out=resp.getWriter();
-			out.write("<script>alert('上传完成');window.location.href='/MyDrive/CatalogServlet?method=myCatalog&cid="+cid+"'</script>");
+			out.write("<script>alert('上传完成');window.location.href='/mydisks/CatalogServlet?method=myCatalog&cid="+cid+"'</script>");
 		}
 		
 		
-		@Override
-		protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-				throws ServletException, IOException {
-				
-			
-			
-			
-			
-		}
 		
 		
 		

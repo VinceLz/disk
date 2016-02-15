@@ -28,9 +28,7 @@ public class Tool {
 		return sb.toString();
 	}
 
-	public static byte[] createChecksum(String filename) throws Exception {
-		InputStream fis = new FileInputStream(filename);
-
+	public static byte[] createChecksum(InputStream fis) throws Exception {
 		byte[] buffer = new byte[1024];
 		MessageDigest complete = MessageDigest.getInstance("MD5");
 		int numRead;
@@ -52,8 +50,8 @@ public class Tool {
 	 * @return
 	 * @throws Exception
 	 */
-	public static String getMD5Checksum(String filename) throws Exception {
-		byte[] b = createChecksum(filename);
+	public static String getMD5Checksum(InputStream in) throws Exception {
+		byte[] b = createChecksum(in);
 		String result = "";
 
 		for (int i = 0; i < b.length; i++) {

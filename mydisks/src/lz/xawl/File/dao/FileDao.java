@@ -6,14 +6,12 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletContext;
-import javax.servlet.jsp.jstl.core.Config;
 
 import lz.xawl.File.domain.File;
 
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.MapListHandler;
-import org.junit.Test;
 
 import cn.itcast.jdbc.TxQueryRunner;
 
@@ -94,8 +92,17 @@ public class FileDao {
 			abf.delete();
 		}
 	}
-
-	@Test
+	//查找fpath 
+	public File findByFpath(String path) throws SQLException{
+		String sql="select * from file where fPath=?";
+		return qr.query(sql, new BeanHandler<File>(File.class),path);
+	}
+	
+		//查找hash
+	public File findByHash(String hash) throws SQLException{
+		String sql="select * from file where fHash=?";
+		return qr.query(sql, new BeanHandler<File>(File.class),hash);
+	}
 	public void test() throws Exception {
 		File f2 = new File();
 		File f1 = new File();
