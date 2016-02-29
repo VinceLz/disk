@@ -14,13 +14,13 @@ public class myProgressListener implements ProgressListener {
 		fileUploadStatus status = new fileUploadStatus();
 		session.setAttribute("status", status);
 	}
-	
-	
-	/* pBytesRead  到目前为止读取文件的比特数
-	 * pContentLength 文件总大小
+
+	/*
+	 * pBytesRead 到目前为止读取文件的比特数 pContentLength 文件总大小
 	 */
 	public void update(long pBytesRead, long pContentLength, int pItems) {
-		fileUploadStatus status = (fileUploadStatus) session.getAttribute("status");
+		fileUploadStatus status = (fileUploadStatus) session
+				.getAttribute("status");
 		status.setPBytesRead(pBytesRead);
 		status.setPContentLength(pContentLength);
 	}

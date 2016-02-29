@@ -149,6 +149,7 @@ String basePath = request.getScheme() + "://"
 												<td>文件名</td>
 												<td>修改日期</td>
 												<td>大小</td>
+												<td>类型</td>
 												<td>下载次数</td>
 												<td>操作</td>
 											</tr>
@@ -169,6 +170,7 @@ String basePath = request.getScheme() + "://"
 												<td>${c.cDate }</td>
 												<td></td>
 												<td></td>
+												<td></td>
 												<td><a href='<c:url value="/CatalogServlet?method=deleteCatalog&cid=${c.cId }&pid=${c.parent.cId }"></c:url>'>删除</a><a>重命名</a></td>
 											</tr>
 											</c:forEach>
@@ -179,6 +181,7 @@ String basePath = request.getScheme() + "://"
 												<td>${f.fName }</td>	
 												<td>${f.fUploadtime }</td>
 												<td><fmt:formatNumber type="number" value="${f.fSize/1048576}" maxFractionDigits="4"/>MB</td>
+												<td>${f.fType }</td>
 												<td>${f.fDowncount }</td>
 												<td jq="true" ><a href="#" iid=${f.fId }>删除</a><a>重命名</a> <a href='<c:url value="/DownLoadServlet?fid=${f.fId }&cid=${c.cId }"></c:url>'>下载</a></td>
 <!-- 											</tr> -->
